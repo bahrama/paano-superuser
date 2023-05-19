@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new KeycloakRoleConverter());
 
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/supperuser/token")
+        http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/superuser/token")
                 //.hasAuthority("SCOPE_profile")
                 .hasRole("admin")
                 .anyRequest().authenticated()
